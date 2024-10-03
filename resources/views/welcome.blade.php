@@ -6,6 +6,17 @@
   @vite('resources/css/app.css')
 </head>
 <body>
-    <button class="background-color: rgb(253 230 138);"></button>
+    <button type="button" class="btn btn-blue">Press</button>
+        <style>
+            .btn {
+
+            }
+            .btn-blue {
+
+            }
+            .btn-blue:hover {
+                
+            }
+        </style>
 </body>
 </html>
