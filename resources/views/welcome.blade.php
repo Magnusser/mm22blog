@@ -54,7 +54,7 @@
                     <p class="text-neutral-content">Comments: {{ $post->comments()->count() }}</p>
                     <div class="flex flex-wrap gap-1">
                         @foreach ($post->tags as $tag)
-                        <div class="badge badge-primary badge-outline">{{$tag->name}}</div>
+                            <div class="badge badge-primary badge-outline">{{$tag->name}}</div>
                         @endforeach
                     </div>
                     <div class="card-actions justify-end">
