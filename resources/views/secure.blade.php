@@ -7,7 +7,5 @@
         <a href="{{route('secure')}}" class="btn btn-primary mt-4">Secure pages</a>
       </div>
     </div>
-  </div>
-
-     
+  </div>  
 @endsection

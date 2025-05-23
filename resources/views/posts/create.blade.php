@@ -1,6 +1,6 @@
 @extends('partials.layout')
 @section('content')
-<div class="card bg-base-200  shadow-xl mx-auto my-auto">
+<div class="card bg-base-100  shadow-xl mx-auto my-auto">
     <div class="card-body">
         <form method="POST" action="{{ route('posts.store') }}" enctype="multipart/form-data">
             @csrf
