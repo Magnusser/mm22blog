@@ -21,25 +21,16 @@
                     </div>
                 @endif
             </div>
-
             <p class="text-neutral-content">{{ $post->user->name }}</p>
-
-
-
-
             </div>
-            
             <div class="card-actions justify-end">
             </div>
-
-
         </div>
     </div>
     @foreach ($post->comments as $comment)
     <div class="card bg-base-300 shadow-xl mb-2 min-h-full">
         <div class="card-body">
             <p>{{ $comment->body }}</p>
-
         <div class="flex flex-row">
             <div class="basis-1/2">
                 <div class="tooltip w-fit" data-tip="{{ $comment->created_at }}">
