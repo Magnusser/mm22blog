@@ -1,25 +1,27 @@
-<x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+@extends('partials.layout')
+
+@section('content')
+<div class="card bg-base-100 w-full max-w-md shadow-md mx-auto my-12 border border-base-300">
+    <div class="card-body">
+        <form method="POST" action="{{ route('password.email') }}">
+            @csrf
+
+            <label class="form-control w-full">
+                <div class="label">
+                    <span class="label-text font-semibold">Email</span>
+                </div>
+                <input type="email" name="email" placeholder="Email" value="{{ old('email') }}" class="input input-bordered w-full @error('email') input-error @enderror"/>
+                <div class="label">
+                    @error('email')
+                        <span class="label-text-alt text-error">{{ $message }}</span>
+                    @enderror
+                </div>
+            </label>
+
+            <div class="flex justify-end mt-6">
+                <input type="submit" class="btn btn-primary btn-sm" value="{{ __('Send Password Reset Link') }}">
+            </div>
+        </form>
     </div>
-
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('password.email') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+</div>
+@endsection
